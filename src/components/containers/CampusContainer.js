@@ -14,7 +14,6 @@ import {
   deleteCampusThunk,
   deleteStudentThunk,
 } from "../../store/thunks";
-
 import { CampusView } from "../views";
 
 class CampusContainer extends Component {
