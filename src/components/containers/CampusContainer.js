@@ -5,10 +5,15 @@ The Container component is responsible for stateful logic and data fetching, and
 passes data (if any) as props to the corresponding View component.
 If needed, it also defines the component's "connect" function.
 ================================================== */
-import Header from './Header';
+import Header from "./Header";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchCampusThunk } from "../../store/thunks";
+import {
+  fetchCampusThunk,
+  editCampusThunk,
+  deleteCampusThunk,
+  deleteStudentThunk,
+} from "../../store/thunks";
 
 import { CampusView } from "../views";
 
@@ -24,7 +29,12 @@ class CampusContainer extends Component {
     return (
       <div>
         <Header />
-        <CampusView campus={this.props.campus} />
+        <CampusView
+          campus={this.props.campus}
+          deleteCampus={this.props.deleteCampus}
+          editCampus={this.props.editCampus}
+          deleteStudent={this.props.deleteStudent}
+        />
       </div>
     );
   }
@@ -35,7 +45,7 @@ class CampusContainer extends Component {
 // The "mapState" is called when the Store State changes, and it returns a data object of "campus".
 const mapState = (state) => {
   return {
-    campus: state.campus,  // Get the State object from Reducer "campus"
+    campus: state.campus, // Get the State object from Reducer "campus"
   };
 };
 // 2. The "mapDispatch" argument is used to dispatch Action (Redux Thunk) to Redux Store.
@@ -43,10 +53,13 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     fetchCampus: (id) => dispatch(fetchCampusThunk(id)),
+    editCampus: (id) => dispatch(editCampusThunk(id)),
+    deleteCampus: (id) => dispatch(deleteCampusThunk(id)),
+    deleteStudent: (id) => dispatch(deleteStudentThunk(id)),
   };
 };
 
 // Export store-connected container by default
-// CampusContainer uses "connect" function to connect to Redux Store and to read values from the Store 
+// CampusContainer uses "connect" function to connect to Redux Store and to read values from the Store
 // (and re-read the values when the Store State updates).
 export default connect(mapState, mapDispatch)(CampusContainer);
