@@ -12,7 +12,7 @@ import { withRouter } from "react-router-dom";
 
 import { 
   fetchAllStudentsThunk,
-  deleteStudentThunk
+  deleteStudentThunk,
   editStudentThunk
 } from '../../store/thunks';
 

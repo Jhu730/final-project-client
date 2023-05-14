@@ -14,12 +14,14 @@ export const fetchAllCampuses = (campuses) => {
 };
 
 //addCampus
-export const addCampus = (campuses) => {
+export const addCampus = (campus) => {
   return {
     type: at.ADD_CAMPUS,
     payload: campus,
   };
 };
+
+
 //deleteCampus
 export const deleteCampus = (id) => {
   return {
