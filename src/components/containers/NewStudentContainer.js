@@ -19,7 +19,10 @@ class NewStudentContainer extends Component {
     super(props);
     this.state = {
       firstname: "", 
-      lastname: "", 
+      lastname: "",
+      email: "",
+      gpa: 0,
+      imageUrl: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80",
       campusId: null, 
       redirect: false, 
       redirectId: null
@@ -40,7 +43,10 @@ class NewStudentContainer extends Component {
     let student = {
         firstname: this.state.firstname,
         lastname: this.state.lastname,
-        campusId: this.state.campusId
+        campusId: this.state.campusId,
+        email: this.state.email,
+        imageUrl: this.state.imageUrl,
+        gpa: this.state.gpa,
     };
     
     // Add new student in back-end database
@@ -50,7 +56,10 @@ class NewStudentContainer extends Component {
     this.setState({
       firstname: "", 
       lastname: "", 
-      campusId: null, 
+      campusId: null,
+      imageUrl: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80",
+      gpa: 0,
+      email: "",
       redirect: true, 
       redirectId: newStudent.id
     });

@@ -13,7 +13,7 @@ const AllCampusesView = (props) => {
   if (!props.allCampuses.length) {
     return(
     <div>
-      <div>There are no campuses.</div>;
+      <div>There are no campuses.</div>
       <Link to={`/newcampus`}>
         <button>Add New Campus</button>
       </Link>
