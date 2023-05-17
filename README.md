@@ -1,6 +1,7 @@
 # client-starter-code
 
 This repository is the client (front-end) starter code for Final Project - Full-Stack CRUD Application.
+GROUP MEMEBERS : JASON HU(jhu730) , DAVID CHEN (dchen628)
 
 ----------
 ### 1. Use the following process to ***import*** the Final Project client starter code repository to your GitHub account as the starter codebase
