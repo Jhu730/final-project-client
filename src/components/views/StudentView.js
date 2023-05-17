@@ -17,7 +17,7 @@ const StudentView = (props) => {
       {student.campusId ? (<Link to={`/campus/${student.campusId}`} ><h3>{"College: " +student.campus.name}</h3></Link>) : (<h3>This student is not enrolled</h3>)}
       <p>{"Email: " + student.email}</p>
       <p>{"GPA: " + student.gpa}</p>
-      <Link to={`/editstudent/` + student.id}>
+      <Link to={`/editstudent/${student.id}`}>
         <button>Edit Student</button>
       </Link>
       <Link to={'/students'}>
