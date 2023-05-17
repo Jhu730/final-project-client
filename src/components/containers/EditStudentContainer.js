@@ -36,7 +36,7 @@ class EditStudentContainer extends Component {
           redirectId: null
         })
     }
- 
+   // Capture  new input data when it is entered
     handleChange = event => {
       this.setState({
         [event.target.name]: event.target.value
